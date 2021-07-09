@@ -1,0 +1,13 @@
+.menu__link {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: rgba($text-color, 0.6);
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+.menu__link:hover{
+    color: rgba($accent-color, 1);
+    font-weight: 500;
+}

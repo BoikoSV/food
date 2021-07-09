@@ -3,3 +3,16 @@
 *::after{
     box-sizing: border-box;
 }
+body{
+    min-width: 320px;
+}
+.container{
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+//Variables
+$accent-color: #DC780B;
+$text-color: #150C01;
