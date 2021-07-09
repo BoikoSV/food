@@ -1,0 +1,37 @@
+{
+  "name": "gulp-starter",
+  "version": "1.0.0",
+  "description": "Starter template for projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoikoSV/gulp-starter.git"
+  },
+  "keywords": [
+    "Gulp"
+  ],
+  "author": "Sergiy Boiko <boikosmail2@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BoikoSV/gulp-starter/issues"
+  },
+  "homepage": "https://github.com/BoikoSV/gulp-starter#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.4",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.3",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-ttf2woff2": "^4.0.1",
+    "gulp-uglify-es": "^2.0.0",
+    "sass": "^1.35.1"
+  }
+}
