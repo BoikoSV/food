@@ -6,6 +6,11 @@
 body{
     min-width: 320px;
 }
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 .container{
     max-width: 1170px;
     padding-left: 15px;

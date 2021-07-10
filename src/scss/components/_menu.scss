@@ -6,6 +6,11 @@
     color: rgba($text-color, 0.6);
     transition: color 0.2s;
     white-space: nowrap;
+
+    @media (max-width: 769px) {
+        color: rgba($text-color, 0.8);
+        font-weight: 500;
+    }
 }
 .menu__link:hover{
     color: rgba($accent-color, 1);
