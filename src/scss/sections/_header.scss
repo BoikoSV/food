@@ -3,6 +3,7 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    padding-top: 2rem;
 
     @media (max-width: 769px) {
         justify-content: space-between;
