@@ -1,15 +1,17 @@
 const { src, dest, parallel, series, watch } = require('gulp');
-const fileinclude = require('gulp-file-include');
-const browserSync = require('browser-sync').create();
-const sourcemaps  = require('gulp-sourcemaps');
-const ttf2woff2   = require('gulp-ttf2woff2');
-const cleanCSS    = require('gulp-clean-css');
-const imagemin    = require('gulp-imagemin');
-const changed     = require('gulp-changed');
-const uglify      = require('gulp-uglify-es').default;
-const concat      = require('gulp-concat');
-const scss        = require('gulp-sass')(require('sass'));
-const del         = require('del');
+const autoprefixer = require('gulp-autoprefixer');
+const fileinclude  = require('gulp-file-include');
+const browserSync  = require('browser-sync').create();
+const sourcemaps   = require('gulp-sourcemaps');
+const ttf2woff2    = require('gulp-ttf2woff2');
+const cleanCSS     = require('gulp-clean-css');
+const imagemin     = require('gulp-imagemin');
+const changed      = require('gulp-changed');
+const uglify       = require('gulp-uglify-es').default;
+const concat       = require('gulp-concat');
+const scss         = require('gulp-sass')(require('sass'));
+const del          = require('del');
+
 
 
 
@@ -20,6 +22,7 @@ function styles(){
         .pipe(scss().on('error', scss.logError))
         .pipe(cleanCSS())
         .pipe(concat('style.min.css'))
+        .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(dest('./dist/css/'))
         .pipe(browserSync.stream());
