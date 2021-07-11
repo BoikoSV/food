@@ -4,6 +4,10 @@
     * 446px это высота бельшей стороны iphone6.
     */
     height: max(100vh - 76px, 446px);
+
+    @media (max-width: 769px) {
+        height: 100vmin;
+    }
 }
 .hero__inner{
     height: 100%;
@@ -25,6 +29,7 @@
     @media (max-width: 769px) {
         padding-left: 20px;
         padding-right: 20px;
+        //margin-top: -100px;
     }
 }
 .hero__inner::after{
@@ -69,6 +74,10 @@
     line-height: clamp(2rem, 4.1vw, 3.1rem);
     color: #150c01;
     margin-bottom: 1rem;
+
+    @media (max-width: 769px) {
+        text-align: center;
+    }
 }
 .hero__desc {
     font-family: Roboto;
