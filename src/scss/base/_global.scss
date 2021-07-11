@@ -3,6 +3,9 @@
 *::after{
     box-sizing: border-box;
 }
+a{
+    display: inline-block;
+}
 body{
     min-width: 320px;
 }

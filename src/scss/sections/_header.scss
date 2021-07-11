@@ -1,9 +1,10 @@
+$header-padding-top: 2rem;
 .header__inner{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    padding-top: 2rem;
+    padding-top: $header-padding-top;
 
     @media (max-width: 769px) {
         justify-content: space-between;
@@ -23,7 +24,7 @@
 
     @media (max-width: 769px) {
         //border: 1px solid $accent-color;
-        background-color: rgba(#fff, 0.8);
+        background-color: rgba(#fff, 1);
         box-shadow: 0 0 10px rgba($accent-color, 0.3);
         display: none;
         opacity: 0;
@@ -41,6 +42,7 @@
     animation-name: open-menu;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+    z-index: 1;
 
     @media (max-width: 768px) {
         display: block;

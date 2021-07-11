@@ -1,0 +1,46 @@
+.hero{
+    /*
+    *  Расчет минимальной высоты hero. 44px это высота логотипа которая задает размер меню.
+    * 446px это высота бельшей стороны iphone6.
+    */
+    height: max(100vh - ($header-padding-top + 2.7rem), 446px);
+}
+.hero__inner{
+    height: 100%;
+    position: relative;
+}
+.hero__inner::after{
+    content: '';
+    position: absolute;
+    background-image: url('../images/hero-img.jpg');
+    background-size: contain;
+    height: 100px;
+    width: auto;
+}
+.hero__title {
+    font-family: Philosopher;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: clamp(2rem, 4.1vw, 3.1rem);
+    color: #150c01;
+}
+.hero__desc {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #150c01;
+    opacity: 0.7;
+}
+.hero__btn{
+    padding: 1.2rem 2.5rem;
+}
+.hereo__btn--white{
+    background-color: transparent;
+    border: 1px solid $accent-color;
+    color: $accent-color;
+}
+.hereo__btn--white:hover{
+    color: rgba($text-color, 0.6);
+    border-color: rgba($text-color, 0.6);
+}
