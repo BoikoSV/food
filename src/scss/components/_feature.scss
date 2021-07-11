@@ -1,0 +1,30 @@
+.feature{
+    //max-width: 300px;
+}
+.feature::before{
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 5.5rem;
+    margin-bottom: 1.2rem;
+}
+.feature:nth-child(1)::before{
+    background-image: url('../svg/feature-ico1.svg');
+}
+.feature:nth-child(2)::before{
+    background-image: url('../svg/feature-ico2.svg');
+}
+.feature:nth-child(3)::before{
+    background-image: url('../svg/feature-ico3.svg');
+}
+.feature__title {
+    font-family: Philosopher;
+    font-weight: 700;
+    font-size: clamp(1rem, 4vmin, 1.2rem);
+    line-height: 1.5rem;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+}

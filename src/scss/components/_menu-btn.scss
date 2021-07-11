@@ -11,13 +11,7 @@ $rotation: 45deg;
 $translateY: math.div($height-icon, 2);
 $translateX: 0;
 
-body {
-  background: $background;
-  color: $color;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-align:center;
-}
+
 
 #hamburger-icon {
   width:$width-line;
