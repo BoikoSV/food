@@ -80,7 +80,9 @@ function fonts(){
 
 function html(){
     return src('./src/index.html')
-        .pipe(fileinclude())
+        .pipe(fileinclude({
+            basepath: '@root'
+        }))
         .pipe(dest('./'))
 }
 
