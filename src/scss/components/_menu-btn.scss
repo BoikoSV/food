@@ -1,3 +1,4 @@
+@use "sass:math";
 $background: #fff;
 $color: $accent-color;
 
@@ -52,9 +53,9 @@ body {
         -moz-transform: translateY math.div($height-line, 2 * -1);
      }
     .line-3 {
-        transform: translateY($height-line / 2);
-        -webkit-transform: translateY($height-line / 2);
-        -moz-transform: translateY($height-line / 2);
+        transform: translateY math.div($height-line, 2);
+        -webkit-transform: translateY math.div($height-line, 2);
+        -moz-transform: translateY math.div($height-line, 2);
     }  
   }
   &.active {

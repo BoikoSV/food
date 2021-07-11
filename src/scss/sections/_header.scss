@@ -1,10 +1,10 @@
-$header-padding-top: 2rem;
+
 .header__inner{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    padding-top: $header-padding-top;
+    padding-top: 2rem;
 
     @media (max-width: 769px) {
         justify-content: space-between;

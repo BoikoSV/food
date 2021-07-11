@@ -3,7 +3,7 @@
     *  Расчет минимальной высоты hero. 44px это высота логотипа которая задает размер меню.
     * 446px это высота бельшей стороны iphone6.
     */
-    height: max(100vh - ($header-padding-top + 2.7rem), 446px);
+    height: max(100vh - 76px, 446px);
 }
 .hero__inner{
     height: 100%;
