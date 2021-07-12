@@ -1,0 +1,30 @@
+$default-color: grey;
+$checked-color: $accent-color;
+$hover-color: red;
+
+.product__stars-form{
+    position: relative;
+}
+.product__stars-form input{
+    position: absolute;
+    left: -9999px;
+}
+.star{
+    font-family: icons;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+//цвет всех звезд по умолчанию
+.product__stars-form .star{
+    color: $default-color;
+    cursor: pointer;
+}
+//Цвет установленных звезв
+input:disabled ~ .star:not(input:checked ~ .star){
+    color: $checked-color;
+}
+//Цвет звезд при наведении
+.product__stars-form:hover input:disabled ~ .star:not(input:hover ~ .star){
+    color: $hover-color;
+}

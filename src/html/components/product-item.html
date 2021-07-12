@@ -7,12 +7,29 @@
         <p class="product__text">@@product-text</p>
         <span class="product__price">@@product-price</span>
         <div class="product__stars" data-star="@@product-stars">
+            <!-- @@include("./src/html/components/stars.html") -->
             <form action="" class="product__stars-form">
-                <input type="radio" name="star">
-                <input type="radio" name="star">
-                <input type="radio" name="star">
-                <input type="radio" name="star">
-                <input type="radio" name="star">
+                <input type="radio" name="star" disabled>
+            
+            
+                <label for="star-@@product-id-1" class="star star1"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-1">
+            
+            
+                <label for="star-@@product-id-2" class="star star2"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-2">
+            
+            
+                <label for="star-@@product-id-3" class="star star3"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-3">
+            
+            
+                <label for="star-@@product-id-4" class="star star4"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-4">
+            
+            
+                <label for="star-@@product-id-5" class="star star5"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-5">
             </form>
         </div>
         <button class="product__add">

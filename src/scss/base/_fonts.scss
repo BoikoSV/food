@@ -4,3 +4,9 @@
 @include font-face($font-family: "Roboto", $file-name: "Roboto-Regular", $font-weight: 400, $font-style: "normal");
 @include font-face($font-family: "Roboto", $file-name: "Roboto-Medium", $font-weight: 500, $font-style: "normal");
 @include font-face($font-family: "Philosopher", $file-name: "Philosopher-Bold", $font-weight: 700, $font-style: "normal");
+@include font-face($font-family: "icons", $file-name: "icons", $font-weight: 400, $font-style: "normal");
+
+//Добваляет иконочный шрифт "star"
+ .icon-star:before {
+    content: "\e900";
+}
