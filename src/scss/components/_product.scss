@@ -30,12 +30,13 @@
 //grid
 .product__text-box {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: 45px 70px 35px;
+    grid-row-gap: 10px;
     grid-template-areas:
-        "title price"
-        "text text"
-        "add stars";
+        "title title price"
+        "text text text"
+        "add stars stars";
 }
 .product__title {
     grid-area: title;

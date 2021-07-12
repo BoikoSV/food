@@ -4,10 +4,10 @@ $hover-color: red;
 
 .product__stars-form{
     position: relative;
+    user-select: none; 
 }
 .product__stars-form input{
-    position: absolute;
-    left: -9999px;
+    display: none;
 }
 .star{
     font-family: icons;
