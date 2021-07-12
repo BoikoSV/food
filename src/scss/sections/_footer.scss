@@ -1,0 +1,141 @@
+.footer {
+    background-color: #252525;
+    padding-top: clamp(2.5rem, 11vw, 8.5rem);
+    padding-bottom: min(2.5rem, 8vw, 6.2rem);
+    text-align: left;
+    margin-top: auto;
+
+    @media (max-width: 769px) {
+        text-align: center;
+    }
+}
+.contacts__list,
+.footer-home__list,
+.footer-menu__list,
+.footer-company__list {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 769px) {
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+.contacts__link,
+.footer-home__link,
+.footer-menu__link,
+.footer-company__link {
+    font-family: Roboto;
+    font-size: 0.8rem;
+    line-height: 2.2rem;
+
+    color: #ffffff;
+    opacity: 0.7;
+}
+.footer-home__title,
+.footer-menu__title,
+.footer-company__title {
+    font-family: Philosopher;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    color: #ffffff;
+    user-select: none;
+}
+.footer-home,
+.footer-menu,
+.footer-company{
+    position: relative;
+}
+.footer input[type=checkbox]{
+    height: 0;
+    transform: scale(0);
+    position: absolute;
+}
+.footer-soc__item {
+    position: relative;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.4rem;
+    //display: block;
+
+    @media (max-width: 769px) {
+        margin-left: 0.4rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+.footer-soc__item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer-soc__item--instagram::after {
+    background-image: url("../svg/instagram.svg");
+}
+.footer-soc__item--facebook::after {
+    background-image: url("../svg/facebook.svg");
+}
+.footer-soc__item--twitter::after {
+    background-image: url("../svg/twitter.svg");
+}
+.footer-soc__item--youtube::after {
+    background-image: url("../svg/youtube.svg");
+}
+
+//footer layout grid
+.footer__inner {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) repeat(3, 1fr);
+    grid-gap: 40px;
+    @media (max-width: 769px) {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+}
+
+//drop down list
+
+@media (max-width: 769px) {
+    .footer-home__title,
+    .footer-menu__title,
+    .footer-company__title {
+        position: relative;
+        left: -0.2rem;
+        cursor: pointer;
+    }
+    .footer-home__title::after,
+    .footer-menu__title::after,
+    .footer-company__title::after {
+        content: '';
+        position: absolute;
+        width: 0.8rem;
+        height: 0.8rem;
+        right: -1rem;
+        top: calc(50% - 0.4rem);
+        transform: rotate(-90deg);
+        background-image: url('../svg/down-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: transform 0.2s;
+    }
+    footer input:checked + label::after{
+        transform: rotate(0);
+    }
+    footer input ~ ul{
+        display: none;
+    }
+    footer input:checked ~ ul{
+        display: block;
+    }
+    .footer-company__socials{
+        margin-top: 2rem;
+    }
+}

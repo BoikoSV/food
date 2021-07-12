@@ -1,0 +1,96 @@
+
+.header__inner{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding-top: 2rem;
+
+    @media (max-width: 769px) {
+        justify-content: space-between;
+    }
+}
+.header__menu{
+    padding: 0 1rem;
+    margin-right: auto;
+    @media (max-width: 769px) {
+        margin: -6px 0 0 0;
+        padding: 0;
+        order: 1;
+    }
+}
+.header__menu-list{
+    display: flex;
+
+    @media (max-width: 769px) {
+        //border: 1px solid $accent-color;
+        background-color: rgba(#fff, 1);
+        box-shadow: 0 0 10px rgba($accent-color, 0.3);
+        display: none;
+        opacity: 0;
+    }
+}
+.header__menu-list--open{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    right: 15px;
+    width: 300px;
+    border-radius: 6px;
+    animation-name: open-menu;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+    @media (max-width: 426px) {
+        width: calc(100% - 30px);
+    }
+}
+.header__menu-list--close{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(110%);
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    right: 15px;
+    width: 300px;
+    border-radius: 6px;
+    animation-name: close-menu;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+    @media (max-width: 426px) {
+        width: calc(100% - 30px);
+    }
+}
+.header__menu-link{
+    display: block;
+    padding: 0.5rem 1.2rem;
+
+    @media (max-width: 769px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    @media (max-width: 426px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+.header__menu-btn{
+
+    @media (max-width: 769px) {
+        display: block;
+    }
+}
+.header__btn-booking{
+    padding: 0.8rem 1.8rem;
+}

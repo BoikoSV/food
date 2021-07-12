@@ -1,0 +1,30 @@
+.features{
+    text-align: center;
+}
+.features{
+    padding: 3.2rem 0;
+}
+.features__title{
+    margin-bottom: 0.5rem;
+}
+.features__sub-title{
+    margin-bottom: 2.7rem;
+}
+.features__list{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    grid-gap: 25px;
+
+    @media (max-width: 769px) {
+        grid-auto-flow: row;
+        justify-content: center;
+        grid-gap: 50px;
+    }
+}
+.feature__item{
+    max-width: 300px;
+
+    @media (max-width: 769px) {
+    }
+}

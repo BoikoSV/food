@@ -1,0 +1,39 @@
+<li class="product__item product" data-product-id="@@product-id">
+    <div class="product__img-box">
+        <img src="dist/images/@@product-img" alt="" class="product__img">
+    </div>
+    <div class="product__text-box">
+        <h4 class="product__title">@@product-name</h4>
+        <p class="product__text">@@product-text</p>
+        <span class="product__price">@@product-price</span>
+        <div class="product__stars" data-star="@@product-stars">
+            <!-- @@include("./src/html/components/stars.html") -->
+            <form action="" class="product__stars-form">
+                <input type="radio" name="star" disabled>
+            
+            
+                <label for="star-@@product-id-1" class="star star1"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-1">
+            
+            
+                <label for="star-@@product-id-2" class="star star2"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-2">
+            
+            
+                <label for="star-@@product-id-3" class="star star3"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-3">
+            
+            
+                <label for="star-@@product-id-4" class="star star4"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-4">
+            
+            
+                <label for="star-@@product-id-5" class="star star5"><span class="icon-star"></span></label>
+                <input type="radio" name="star" id="star-@@product-id-5">
+            </form>
+        </div>
+        <button class="product__add">
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0C114.51 0 0 114.497 0 256c0 141.49 114.497 256 256 256 141.49 0 256-114.497 256-256C512 114.51 397.503 0 256 0zm0 477.867c-122.337 0-221.867-99.529-221.867-221.867S133.663 34.133 256 34.133 477.867 133.663 477.867 256 378.337 477.867 256 477.867z"/><path d="M371.345 238.933h-98.278v-98.278c0-9.425-7.641-17.067-17.067-17.067s-17.067 7.641-17.067 17.067v98.278h-98.278c-9.425 0-17.067 7.641-17.067 17.067s7.641 17.067 17.067 17.067h98.278v98.278c0 9.425 7.641 17.067 17.067 17.067s17.067-7.641 17.067-17.067v-98.278h98.278c9.425 0 17.067-7.641 17.067-17.067s-7.642-17.067-17.067-17.067z"/></svg>
+        </button>
+    </div>
+</li>

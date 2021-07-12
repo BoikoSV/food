@@ -1,0 +1,16 @@
+.btn{
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    background-color: $accent-color;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: color 0.2s, background-color 0.2s, border-color, 0.2s;
+}
+.btn:hover{
+    border-color: $accent-color;
+    background-color: transparent;
+    color: $accent-color;
+}
