@@ -1,5 +1,9 @@
 .products{
     padding: 3.2rem 0;
+
+    @media (max-width: 769px) {
+        padding-bottom: 0;
+    }
 }
 .products__title{
     text-align: center;

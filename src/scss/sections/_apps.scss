@@ -1,0 +1,134 @@
+.apps {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    background-color: rgba(#fbf1e7, 0.4);
+}
+
+.apps__title {
+    margin-bottom: 5px;
+}
+.apps__sub-title {
+    margin-bottom: 5%;
+}
+.apps__text {
+    margin-bottom: 7%;
+}
+.apps__btn {
+    font-family: Roboto;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    border: 1px solid rgba($text-color, 0.1);
+    border-radius: 5px;
+    padding: 15px 30px 15px 63px;
+    position: relative;
+
+    @media (max-width: 769px) {
+        padding: 8px 17px 8px 35px;
+        line-height: 1rem;
+    }
+}
+.apps__apple {
+    background-color: $text-color;
+    color: #fff;
+    margin-right: 30px;
+
+    @media (max-width: 769px) {
+        margin-right: 5px;
+    }
+}
+.apps__google {
+    font-family: Roboto;
+    font-weight: 500;
+    color: $text-color;
+}
+.apps__apple::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 28px;
+    top: calc(50% - 14px);
+    background-image: url("../svg/apple.svg");
+    background-size: contain;
+    background-position: center;
+
+    @media (max-width: 769px) {
+        width: 20px;
+        height: 20px;
+        left: 9px;
+        top: calc(50% - 11px);
+    }
+}
+.apps__google::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 26px;
+    left: 28px;
+    top: calc(50% - 14px);
+    background-image: url("../svg/google.svg");
+    background-size: contain;
+    background-position: center;
+
+    @media (max-width: 769px) {
+        width: 18px;
+        height: 20px;
+        left: 12px;
+        top: calc(50% - 10px);
+    }
+}
+
+//grid
+
+.apps__inner {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    grid-template-rows: min(45vw, 520px);
+    grid-gap: 20px;
+
+    @media (max-width: 769px) {
+        grid-template-columns: 1fr 0.4fr;
+    }
+    @media (max-width: 700px) {
+        display: block;
+    }
+}
+.apps__text-box {
+    display: flex;
+
+    @media (max-width: 700px) {
+        text-align: center;
+    }
+}
+.apps__text-inner {
+    margin: auto 0 auto auto;
+    width: 85%;
+
+    @media (max-width: 769px) {
+        width: 100%;
+        margin: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    @media (max-width: 700px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+.apps__img-box {
+    position: relative;
+
+    @media (max-width: 700px) {
+        display: none;
+    }
+}
+.apps__img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    border-radius: 38px;
+    transform: translateX(-50%) scale(1.15);
+}
