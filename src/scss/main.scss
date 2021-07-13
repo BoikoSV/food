@@ -4,6 +4,7 @@
 @import "base/reset";
 @import "base/mixins";
 @import "base/fonts";
+@import "base/icons-font";
 @import "base/global";
 
 
@@ -26,6 +27,7 @@
 @import "components/feature";
 @import "components/stars";
 @import "components/product";
+@import "components/feedback-form";
 
 
 
@@ -39,4 +41,5 @@
 @import "sections/products";
 @import "sections/apps";
 @import "sections/reviews";
+@import "sections/feedback";
 @import "sections/footer";
