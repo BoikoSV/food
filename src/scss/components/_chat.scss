@@ -1,0 +1,180 @@
+$header-color: #4b4e85; //Цвет шапки
+$main-background-color: #fff; //Основной фоновой цвет
+$footer-color: #fff;        //Цвет футера
+$border-color: rgba($text-color, 0.1); //Цвет рамки
+$window-height: 470px; //Высота всего чата
+$section-height: 60px 1fr 70px; //высота секций (header/main/footer)
+$admin-avatar-width: 40px; //размер аватара администратора
+$color-message-admin: rgba(#000, 0.1);
+$color-message-guest: rgba($header-color, 0.8);
+
+
+.chat{
+    position: fixed;
+    right: 15%;
+    bottom: 0;
+    width: 300px;
+    z-index: 10;
+    height: $window-height;
+    display: grid;
+    grid-template-rows: $section-height;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 20px 20px 3px rgba(#000, 0.1);
+}
+.chat__header{
+    background-color: $header-color;
+}
+.chat__main{
+    border-left: 2px solid $border-color;
+    border-right: 2px solid $border-color;
+    background-color: $main-background-color;
+}
+.chat__footer{
+    border: 2px solid rgba($text-color, 0.1);
+    background-color: $footer-color;
+}
+
+//header
+.chat__header{
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 0 0 5px 3px rgba( #000000, 0.5);
+    z-index: 1;
+    cursor: pointer;
+}
+.chat__admin-img-box{
+    width: $admin-avatar-width;
+    height: $admin-avatar-width;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.chat__admin-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.chat__admin-name{
+    color: #fff;
+}
+.chat__header-button{
+    margin-left: auto;
+}
+.icon-open-chat{
+    font-family: icons-font;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+//main
+.chat__main{
+    overflow-y: auto;
+}
+.message__list{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.message-item{
+    width: 85%;
+}
+//Настройка стиля сообщений по умолчанию (для администратора)
+.message-item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.message-item__text{
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: $color-message-admin;
+}
+.message-item__author-info{
+    display: flex;
+    margin-left: 15px;
+}
+.message-item__author-info::after{
+    content: '\00B7';
+    order: 0;
+    margin-right: 5px;
+}
+.message-item__date-time{
+    font-size: 0.7rem;
+    order: 1;
+}
+.message-item__name{
+    font-size: 0.7rem;
+    order: -1;
+    margin-right: 5px;
+}
+
+//Настройки стилей для гостя (переопределение)
+.message-item--guest.message__item{
+    margin-left: auto;
+}
+
+.message-item--guest{
+    .message-item__text{
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 15px;
+        background-color: $color-message-guest;
+        color: #fff;
+    }
+    .message-item__author-info{
+        justify-content: flex-end;
+        margin-right: 15px;
+    }
+}
+
+//footer
+
+//grid layout
+.chat__footer-wrapper{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 20px 1fr;
+    grid-template-areas: "count send"
+                        "text send";
+}
+
+.chat__count-text{
+    grid-area: count;
+}
+.chat__textarea{
+    grid-area: text;
+}
+.chat__footer-btn{
+    grid-area: send;
+}
+
+
+.chat__footer-wrapper{
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.chat__count-text{
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+    align-self: center;
+}
+.chat__textarea{
+    resize: none;
+    overflow: hidden;
+    border: none;
+    border-bottom: 3px solid rgba($header-color, 0.5);
+}
+.icon-send{
+    font-family: icons-font;
+    font-size: 1.2rem;
+    color: rgba($text-color, 0.5);
+}
