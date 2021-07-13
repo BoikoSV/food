@@ -17,7 +17,10 @@ const del          = require('del');
 
 
 function styles(){
-    return src('./src/scss/main.scss')
+    return src([
+        './node_modules/swiper/swiper-bundle.min.css',
+        './src/scss/main.scss'
+    ])
         .pipe(sourcemaps.init())
         .pipe(scss().on('error', scss.logError))
         .pipe(cleanCSS())
@@ -29,7 +32,10 @@ function styles(){
 }
 
 function scripts(){
-    return src('./src/js/**/*')
+    return src([
+        './node_modules/swiper/swiper-bundle.min.js',
+        './src/js/**/*'
+    ])
         .pipe(uglify())
         .pipe(concat('script.min.js'))
         .pipe(dest('./dist/js'))
