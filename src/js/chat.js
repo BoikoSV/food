@@ -3,11 +3,16 @@
     const chat = document.querySelector('.chat');           //Весь чат
     const messageList = chat.querySelector('.message__list');   //Список сообщений
     const chatCountText = chat.querySelector('.chat__count-text'); //Показывает количество введенных символов
-    const textArea = chat.querySelector('.chat__textarea');
+    const textArea = chat.querySelector('.chat__textarea'); //Текстовое поле
+    const chatContent = chat.querySelector('.chat__main');
 
     const settings = {
         isChatOpen: false,
         maxLengthMessage: 100,
+        guestStatus: "guest",
+        adminStatus: "admin",
+        adminName: "Administrator",
+        guestName: "Guest"
     }
 
     //Методы которые отрабатывают сразу
@@ -53,13 +58,54 @@
         }
     }
 
+    //Получить текст с текстового поля
+    function getTextFromTextarea(){
+        let text = textArea.value;
+        textArea.value = '';
+        return text;
+    }
+
+    //Скролить вниз
+    function scrollToBottom(){
+        chatContent.scrollTop += chatContent.offsetHeight;
+    }
+
+    //Получить точное время
+    function getTime(){
+        let time = new Date();
+        return time.getHours() + ':' + time.getMinutes();
+    }
+
+    //Создает html сообщение
+    function createHtmlMessage(status, message, name, time){
+        return `
+        <li class="message__item message-item message-item--${status}">
+                <p class="message-item__text">
+                    ${message}
+                </p>
+                <div class="message-item__author-info">
+                    <p class="message-item__name">${name}</p>
+                    <div class="message-item__date-time">${time}</div>
+                </div>
+            </li>
+        `
+    }
+
+    //Вставляет сообщение в чат
+    function sendMessageToChat(htmlMessage){
+        messageList.insertAdjacentHTML('beforeend', htmlMessage);
+        scrollToBottom();
+    }
 
 
+    /**
+     *  События
+     */
     chat.addEventListener('click', function(event){
-        console.log(settings.isChatOpen);
         //открытие чата
         if(settings.isChatOpen === false){
             openChat();
+            scrollToBottom();
             return;
         }
         
@@ -69,6 +115,10 @@
             return;
         }
 
+        if(event.target.closest('.chat__footer-btn')){
+            let htmlMessage = createHtmlMessage('guest', getTextFromTextarea(), settings.guestName, getTime());
+            sendMessageToChat(htmlMessage);
+        }
     })
 
     //Считает количество введенных символов
@@ -76,5 +126,10 @@
         countSymbols(this.value);
     })
 
-    
+    textArea.addEventListener('keydown', function(event){
+        if(event.key === 'Enter'){
+            let htmlMessage = createHtmlMessage('guest', getTextFromTextarea(), settings.guestName, getTime());
+            sendMessageToChat(htmlMessage);
+        }
+    })
 })();
