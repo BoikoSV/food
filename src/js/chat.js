@@ -5,6 +5,8 @@
     const chatCountText = chat.querySelector('.chat__count-text'); //Показывает количество введенных символов
     const textArea = chat.querySelector('.chat__textarea'); //Текстовое поле
     const chatContent = chat.querySelector('.chat__main');
+    const message = 'Lorem ipsum dolor, sit amet consectetur adique quas quod mollitia, quos tempora?';
+    
 
     const settings = {
         isChatOpen: false,
@@ -76,6 +78,10 @@
         return time.getHours() + ':' + time.getMinutes();
     }
 
+    //Проверка на пустоту инпута
+    function isEmptyMessage(){
+        return textArea.value.trim().length === 0;
+    }
     //Создает html сообщение
     function createHtmlMessage(status, message, name, time){
         return `
@@ -97,6 +103,12 @@
         scrollToBottom();
     }
 
+    function sendBotMessage(){
+        const botMessage = message.slice(0, Math.random() * message.length);
+        let htmlMessage = createHtmlMessage('admin', botMessage, settings.adminName, getTime());
+                sendMessageToChat(htmlMessage);
+    }
+
 
     /**
      *  События
@@ -116,8 +128,11 @@
         }
 
         if(event.target.closest('.chat__footer-btn')){
-            let htmlMessage = createHtmlMessage('guest', getTextFromTextarea(), settings.guestName, getTime());
-            sendMessageToChat(htmlMessage);
+            if(!isEmptyMessage()){
+                let htmlMessage = createHtmlMessage('guest', getTextFromTextarea(), settings.guestName, getTime());
+                sendMessageToChat(htmlMessage);
+                setTimeout(sendBotMessage, 2000);
+            }
         }
     })
 
@@ -128,8 +143,11 @@
 
     textArea.addEventListener('keydown', function(event){
         if(event.key === 'Enter'){
-            let htmlMessage = createHtmlMessage('guest', getTextFromTextarea(), settings.guestName, getTime());
-            sendMessageToChat(htmlMessage);
+            if(!isEmptyMessage()){
+                let htmlMessage = createHtmlMessage('guest', getTextFromTextarea(), settings.guestName, getTime());
+                sendMessageToChat(htmlMessage);
+                setTimeout(sendBotMessage, 2000);
+            }
         }
     })
 })();

@@ -22,6 +22,11 @@ $color-message-guest: rgba($header-color, 0.8);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 0 20px 20px 3px rgba(#000, 0.1);
+
+    @media (max-width: 426px) {
+        max-width: 290px;
+        right: calc(50% - 145px);
+    }
 }
 .chat__header{
     background-color: $header-color;
@@ -131,6 +136,7 @@ $color-message-guest: rgba($header-color, 0.8);
         border-top-left-radius: 15px;
         background-color: $color-message-guest;
         color: #fff;
+        word-wrap: break-word;
     }
     .message-item__author-info{
         justify-content: flex-end;
