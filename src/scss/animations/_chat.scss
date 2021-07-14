@@ -1,0 +1,10 @@
+@keyframes closeBtn {
+    100% {
+        transform: rotate(180deg) translateY(3px);
+    }
+}
+@keyframes openBtn {
+    100% {
+        transform: translateY(-3px);
+    }
+}

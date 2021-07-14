@@ -63,11 +63,14 @@ $color-message-guest: rgba($header-color, 0.8);
 }
 .chat__header-button{
     margin-left: auto;
+    padding: 10px;
 }
 .icon-open-chat{
     font-family: icons-font;
     color: #fff;
     font-size: 1.5rem;
+    display: block;
+    transition: 0.4s;
 }
 
 //main
@@ -167,6 +170,9 @@ $color-message-guest: rgba($header-color, 0.8);
     line-height: 0.7rem;
     align-self: center;
 }
+.chat__count-text--warning{
+    color: red;
+}
 .chat__textarea{
     resize: none;
     overflow: hidden;
@@ -177,4 +183,35 @@ $color-message-guest: rgba($header-color, 0.8);
     font-family: icons-font;
     font-size: 1.2rem;
     color: rgba($text-color, 0.5);
+}
+
+
+//Открытый/Закрытый чат
+.chat--close{
+    bottom: -410px;
+    transition: 0.4s;
+}
+
+.chat--close:hover{
+    bottom: -380px;
+    cursor: pointer;
+
+        .icon-open-chat{
+            animation-name: openBtn;
+            animation-duration: 0.7s;
+            animation-iteration-count: infinite;
+        }
+}
+//Открытый чат
+.chat--open{
+    transition: 0.4s;
+
+    .icon-open-chat{
+        transform: rotate(180deg);
+    }
+    .icon-open-chat:hover{
+        animation-name: closeBtn;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+    }
 }

@@ -36,8 +36,10 @@ function scripts(){
         './node_modules/swiper/swiper-bundle.min.js',
         './src/js/**/*'
     ])
+        .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('script.min.js'))
+        .pipe(sourcemaps.write())
         .pipe(dest('./dist/js'))
         .pipe(browserSync.stream());
 }
